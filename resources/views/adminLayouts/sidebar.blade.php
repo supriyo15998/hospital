@@ -49,23 +49,22 @@
           </a>
           <ul class="treeview-menu">
             <li><a href="{{ route('addbeds') }}"><i class="fa fa-circle-o"></i> Add New Bed</a></li>
-            <li><a href="{{ route('viewbeds') }}"><i class="fa fa-circle-o"></i> View All Materials</a></li>
           </ul>
         </li>
         <li class="treeview">
           <a href="#">
             <i class="fa fa-laptop"></i>
-            <span>Manage Categories</span>
+            <span>Manage Departments</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="#"><i class="fa fa-circle-o"></i> Add New Category</a></li>
-            <li><a href="#"><i class="fa fa-circle-o"></i> View All Categories</a></li>
+            <li><a href="{{ route('adddepartment') }}"><i class="fa fa-circle-o"></i> Add New Department</a></li>
+            
           </ul>
         </li>
-        <li class="treeview">
+        <!-- <li class="treeview">
           <a href="#">
             <i class="fa fa-laptop"></i>
             <span>Manage Gallery</span>
@@ -90,7 +89,7 @@
             <li><a href="#"><i class="fa fa-circle-o"></i> Add New Testimonial</a></li>
             <li><a href="#"><i class="fa fa-circle-o"></i> View All Testimonials</a></li>
           </ul>
-        </li>
+        </li> -->
         <!-- <li class="treeview">
           <a href="#">
             <i class="fa fa-table"></i> <span>Tables</span>

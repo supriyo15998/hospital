@@ -57,9 +57,9 @@
           <!-- small box -->
           <div class="small-box bg-green">
             <div class="inner">
-              <h3>3<!-- <sup style="font-size: 20px">%</sup> --></h3>
+              <h3>{{ $bedCount }}<!-- <sup style="font-size: 20px">%</sup> --></h3>
 
-              <p>Total Materials</p>
+              <p>Total Beds</p>
             </div>
             <div class="icon">
               <i class="ion ion-stats-bars"></i>
@@ -72,9 +72,9 @@
           <!-- small box -->
           <div class="small-box bg-yellow">
             <div class="inner">
-              <h3>45</h3>
+              <h3>{{ $cityCount }}</h3>
 
-              <p>Total Categories</p>
+              <p>Total Cities</p>
             </div>
             <div class="icon">
               <i class="ion ion-person-add"></i>
@@ -84,12 +84,12 @@
         </div>
         <!-- ./col -->
         <div class="col-lg-3 col-xs-6">
-          <!-- small box -->
+         
           <div class="small-box bg-red">
             <div class="inner">
-              <h3>6</h3>
+              <h3>{{ $departmentCount }}</h3>
 
-              <p>Total Photos</p>
+              <p>Total Departments</p>
             </div>
             <div class="icon">
               <i class="ion ion-pie-graph"></i>
@@ -98,8 +98,8 @@
           </div>
         </div>
         <!-- ./col -->
-        <div class="col-lg-3 col-xs-6">
-          <!-- small box -->
+        <!-- <div class="col-lg-3 col-xs-6">
+         
           <div class="small-box bg-blue">
             <div class="inner">
               <h3>43</h3>
@@ -111,7 +111,7 @@
             </div>
             <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
           </div>
-        </div>
+        </div> -->
       </div>
     </section>
   </div>

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\City;
 use App\Hospital;
+use App\Department;
 use App\Bed;
 class HomeController extends Controller
 {
@@ -26,7 +27,10 @@ class HomeController extends Controller
     public function index()
     {
         $hospitalCount = Hospital::count();
-        return view('admin.index')->withHospitalCount($hospitalCount);
+        $cityCount = City::count();
+        $bedCount = Bed::count();
+        $departmentCount = Department::count();
+        return view('admin.index')->withDepartmentCount($departmentCount)->withHospitalCount($hospitalCount)->withCityCount($cityCount)->withBedCount($bedCount);
     }
     public function addhospital()
     {
@@ -64,9 +68,20 @@ class HomeController extends Controller
         $beds = Bed::create($validatedData);
         return redirect('/admin/home')->with('message', 'Bed Added Successfully');
     }
-    public function viewbeds()
+    
+    public function adddepartment()
     {
         $hospitals = Hospital::all();
-        return view('admin.viewbeds')->withHospitals($hospitals);
+        return view('admin.adddepartment')->withHospitals($hospitals);
+    }
+    public function postdepartment(Request $request)
+    {
+        $validatedData = $request->validate([
+            'name' => 'required',
+            'hospital_id' => 'required|not_in:-1'
+        ]);
+        //dd($validatedData);
+        $department = Department::create($validatedData);
+        return redirect('/admin/home')->with('message', 'Department Added Successfully');
     }
 }

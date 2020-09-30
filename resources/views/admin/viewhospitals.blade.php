@@ -44,6 +44,8 @@
                   <th>ID</th>
                   <th>Hospital Name</th>
                   <th>Hospital City</th>
+                  <th>Departments</th>
+                  <th>Bed Details</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -52,6 +54,16 @@
                       <td>{{ $hospital->id }}</td>
                       <td>{{ $hospital->name }}</td>
                       <td>{{ $hospital->city->name }}</td>
+                      <td>
+                        @foreach($hospital->departments as $department)
+                        <span>{{ $department->name }}, </span>
+                        @endforeach
+                      </td>
+                      <td>
+                        @foreach($hospital->beds as $bed)
+                            <span>{{ $bed->bed_type }} => {{ $bed->capacity }} |</span>
+                        @endforeach
+                      </td>
                     </tr>
                   @endforeach
                 </tbody>
