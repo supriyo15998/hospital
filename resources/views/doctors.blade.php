@@ -14,7 +14,7 @@
                 <div class="col-md-3" style="margin: 5px">
                     <div class="card" style="width: 18rem;">
                         <div class="card-body">
-                            <h5 class="card-title">Doctor Name: {{ $doctor->name }}</h5>
+                            <h5 class="card-title">{{ $doctor->name }}</h5>
                             <p class="card-text">Qualification: {{ $doctor->qualification }}</p>
                             <p class="card-text">Specialization: {{ $doctor->specialization }}</p>
                             <p class="card-text">Phone: {{ $doctor->phone }}</p>
