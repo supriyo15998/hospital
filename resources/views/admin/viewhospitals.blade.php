@@ -49,23 +49,29 @@
                 </tr>
                 </thead>
                 <tbody>
-                  @foreach($hospitals as $hospital)
-                    <tr>
-                      <td>{{ $hospital->id }}</td>
-                      <td>{{ $hospital->name }}</td>
-                      <td>{{ $hospital->city->name }}</td>
-                      <td>
-                        @foreach($hospital->departments as $department)
-                        <span>{{ $department->name }}, </span>
-                        @endforeach
-                      </td>
-                      <td>
-                        @foreach($hospital->beds as $bed)
-                            <span>{{ $bed->bed_type }} => {{ $bed->capacity }} |</span>
-                        @endforeach
-                      </td>
-                    </tr>
-                  @endforeach
+                  <tr>
+                    <td>{{ Auth::user()->id }}</td>
+                    <td>{{ Auth::user()->name }}</td>
+                    <td>{{ Auth::user()->city->name }}</td>
+                    <td>
+                      <table class="table table-bordered table-hover">
+                            @foreach(Auth::user()->departments as $department)
+                                <tr>
+                                    <td>{{ $department->name }}</td>
+                                </tr>
+                            @endforeach
+                      </table>
+                    </td>
+                    <td>
+                      <table class="table table-bordered table-hover">
+                            @foreach(Auth::user()->beds as $bed)
+                                <tr>
+                                    <td>Type => {{ $bed->bed_type }} | Occupied => {{ $bed->capacity }} | Total => {{ $bed->total_capacity }}</td>
+                                </tr>
+                            @endforeach
+                      </table>
+                    </td>
+                  </tr>
                 </tbody>
               </table>
             </div>

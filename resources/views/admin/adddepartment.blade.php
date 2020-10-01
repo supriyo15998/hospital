@@ -47,23 +47,13 @@
                 </ul>
               </div>
             @endif
-            <form method="POST" action="#">
+            <form method="POST" action="{{ route('postdepartment') }}">
               @csrf
               <div class="card-body">
                 <div class="form-group">
                   <label for="inputName">Enter department name</label>
                   <input type="text" name="name" id="inputName" placeholder="Enter department name" class="form-control">
                 </div> 
-                <div class="form-group">
-                Select Hospital
-                <select name="hospital_id" class="form-control">
-                  <option value="-1">--Select hospital --</option>
-                    @foreach($hospitals as $hospital)
-                      <option value="{{ $hospital->id }}">{{ $hospital->name }}</option>
-                    @endforeach
-                  </select>
-                </div>
-                
                 
               </div>
                 <div class="form-group d-flex flex-column">

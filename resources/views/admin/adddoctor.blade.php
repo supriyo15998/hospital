@@ -50,15 +50,7 @@
             <form method="POST" action="{{ route('postdoctor') }}">
               @csrf
               <div class="card-body">
-                <div class="form-group">
-                    <label for="hospital_id">Choose Hospital</label>
-                    <select name="hospital_id" id="hospital_id" class="form-control">
-                        <option value="-1">--Select hospital--</option>
-                        @foreach($hospitals as $hospital)
-                        <option value="{{ $hospital->id }}">{{ $hospital->name }}</option>
-                        @endforeach
-                    </select>
-                </div>
+                
                 <div class="form-group">
                   <label for="inputName">Doctor Name</label>
                   <input type="text" name="name" id="inputName" placeholder="Enter doctor name" class="form-control">

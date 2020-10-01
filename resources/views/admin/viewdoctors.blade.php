@@ -42,39 +42,24 @@
                 <thead>
                 <tr>
                   <th>ID</th>
-                  <th>Hospital Name</th>
-                  <th style="text-align:center">Hospital Doctors</th>
+                  <th>Doctor Name</th>
+                  <th>Doctor Qualification</th>
+                  <th>Doctor Specialization</th>
+                  <th>Doctor Phone</th>
+                  <th>Doctor OPD_Day</th>
+                  <th>Doctor OPD_Time</th>
                 </tr>
                 </thead>
                 <tbody>
-                  @foreach($hospitals as $hospital)
+                  @foreach(Auth::user()->doctors as $doctor)
                     <tr>
-                      <td>{{ $hospital->id }}</td>
-                      <td>{{ $hospital->name }}</td>
-                      <td>
-                        <table class="table table-bordered table-hover">
-                            <thead>
-                                <th>Doctor Name</th>
-                                <th>Doctor Qualification</th>
-                                <th>Doctor Specialization</th>
-                                <th>Doctor Phone</th>
-                                <th>Doctor OPD_Day</th>
-                                <th>Doctor OPD_Time</th>
-                            </thead>
-                            <tbody>
-                                @foreach($hospital->doctors as $doctor)
-                                    <tr>
-                                        <td>{{ $doctor->name }}</td>
-                                        <td>{{ $doctor->qualification }}</td>
-                                        <td>{{ $doctor->specialization }}</td>
-                                        <td>{{ $doctor->phone }}</td>
-                                        <td>{{ $doctor->opd_day }}</td>
-                                        <td>{{ $doctor->opd_time }}</td>
-                                    </tr>
-                                @endforeach
-                            </tbody>
-                        </table>
-                      </td>
+                      <td>{{ $doctor->id }}</td>
+                      <td>{{ $doctor->name }}</td>
+                      <td>{{ $doctor->specialization }}</td>
+                      <td>{{ $doctor->qualification }}</td>
+                      <td>{{ $doctor->phone }}</td>
+                      <td>{{ $doctor->opd_day }}</td>
+                      <td>{{ $doctor->opd_time }}</td>
                     </tr>
                   @endforeach
                 </tbody>

@@ -50,15 +50,7 @@
             <form method="POST" action="{{ route('postbeds') }}">
               @csrf
               <div class="card-body">
-                <div class="form-group">
-                Select Hospital
-                <select name="hospital_id" class="form-control">
-                  <option value="-1">--Select hospital --</option>
-                    @foreach($hospitals as $hospital)
-                      <option value="{{ $hospital->id }}">{{ $hospital->name }}</option>
-                    @endforeach
-                  </select>
-                </div>
+                
                 <div class="form-group">
                   <label for="inputName">Enter bed type</label>
                   <input type="text" name="bed_type" id="inputName" placeholder="Enter bed type" class="form-control">
@@ -67,9 +59,13 @@
                   <label for="inputName">Enter capacity</label>
                   <input type="number" name="capacity" id="inputName" placeholder="Enter capacity" class="form-control">
                 </div>
+                <div class="form-group">
+                  <label for="inputName">Total capacity</label>
+                  <input type="number" name="total_capacity" id="inputName" placeholder="Enter capacity" class="form-control">
+                </div>
               </div>
                 <div class="form-group d-flex flex-column">
-                  <input type="submit" name="create_category" class="btn btn-success" value="Add New Category">
+                  <input type="submit" name="create_category" class="btn btn-success" value="Add New Bed">
                 </div>
               </div>
             <form>

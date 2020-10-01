@@ -3,12 +3,12 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use App\Hospital;
+use App\User;
 class City extends Model
 {
     protected $guarded = [];
-    public function hospitals()
+    public function users()
     {
-        return $this->hasMany(Hospital::class);
+        return $this->hasMany(User::class);
     }
 }

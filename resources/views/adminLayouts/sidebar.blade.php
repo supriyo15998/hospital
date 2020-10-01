@@ -30,14 +30,14 @@
         <li class="treeview">
           <a href="#">
             <i class="fa fa-laptop"></i>
-            <span>Manage Hospitals</span>
+            <span>Manage Hospital</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="{{ route('addhospital') }}"><i class="fa fa-circle-o"></i> Add Hospital</a></li>
-            <li><a href="{{ route('viewhospitals') }}"><i class="fa fa-circle-o"></i> View All Hospitals</a></li>
+            <li><a href="{{ route('viewhospitals') }}"><i class="fa fa-circle-o"></i> Hospital Status</a></li>
+            
           </ul>
         </li>
         <li class="treeview">

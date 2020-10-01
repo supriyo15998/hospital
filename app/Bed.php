@@ -3,12 +3,12 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use App\Hospital;
+use App\User;
 class Bed extends Model
 {
     protected $guarded = [];
-    public function hospital()
+    public function user()
     {
-        return $this->belongsTo(Hospital::class);
+        return $this->belongsTo(User::class);
     }
 }
