@@ -14,7 +14,7 @@
                 <div class="col-md-3" style="margin: 5px">
                     <div class="card" style="width: 18rem;">
                         <div class="card-body">
-                            <h5 class="card-title">Department Name: {{ $department->name }}</h5>
+                            <h5 class="card-title">{{ $department->name }}</h5>
                             <!-- <a href="#" class="btn btn-primary">Bed Availability</a> -->
                         </div>
                     </div>
