@@ -14,8 +14,16 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $cities = \App\City::all();
+    return view('index')->withCities($cities);
 });
+Route::get('/{city}','PagesController@city')->name('city');
+Route::get('/{user}/beds','PagesController@beds')->name('beds');
+Route::get('/{user}/emergency','PagesController@emergency')->name('emergency');
+Route::get('/{user}/departments','PagesController@departments')->name('departments');
+Route::get('/{user}/laboratories','PagesController@laboratories')->name('laboratories');
+Route::get('/{user}/helpdesk','PagesController@helpdesk')->name('helpdesk');
+Route::get('/{user}/doctors','PagesController@doctors')->name('doctors');
 Route::prefix('admin')->group(function () {
     Auth::routes(['register' => false]);
     Route::get('/home', 'HomeController@index')->name('home');
