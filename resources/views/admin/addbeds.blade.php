@@ -56,7 +56,7 @@
                   <input type="text" name="bed_type" id="inputName" placeholder="Enter bed type" class="form-control">
                 </div> 
                 <div class="form-group">
-                  <label for="inputName">Enter capacity</label>
+                  <label for="inputName">Available Beds</label>
                   <input type="number" name="capacity" id="inputName" placeholder="Enter capacity" class="form-control">
                 </div>
                 <div class="form-group">
