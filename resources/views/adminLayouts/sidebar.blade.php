@@ -64,20 +64,20 @@
             
           </ul>
         </li>
-        <!-- <li class="treeview">
+        <li class="treeview">
           <a href="#">
             <i class="fa fa-laptop"></i>
-            <span>Manage Gallery</span>
+            <span>Manage Doctors</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="#"><i class="fa fa-circle-o"></i> Add New Photo</a></li>
-            <li><a href="#"><i class="fa fa-circle-o"></i> View All Photos</a></li>
+            <li><a href="{{ route('adddoctor') }}"><i class="fa fa-circle-o"></i> Add New Doctor</a></li>
+            <li><a href="{{ route('viewdoctors') }}"><i class="fa fa-circle-o"></i> View All Doctors</a></li>
           </ul>
         </li>
-        <li class="treeview">
+        <!-- <li class="treeview">
           <a href="#">
             <i class="fa fa-laptop"></i>
             <span>Manage Testimonials</span>

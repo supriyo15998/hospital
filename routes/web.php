@@ -26,5 +26,8 @@ Route::prefix('admin')->group(function () {
     Route::post('/add-beds', 'HomeController@postbeds')->name('postbeds');
     Route::get('/add-department', 'HomeController@adddepartment')->name('adddepartment');
     Route::post('/add-department', 'HomeController@postdepartment')->name('postdepartment');
+    Route::get('/add-doctor', 'HomeController@adddoctor')->name('adddoctor');
+    Route::post('/add-doctor', 'HomeController@postdoctor')->name('postdoctor');
+    Route::get('/view-doctors', 'HomeController@viewdoctors')->name('viewdoctors');
 });
 

@@ -7,6 +7,7 @@ use App\City;
 use App\Hospital;
 use App\Department;
 use App\Bed;
+use App\Doctor;
 class HomeController extends Controller
 {
     /**
@@ -30,7 +31,8 @@ class HomeController extends Controller
         $cityCount = City::count();
         $bedCount = Bed::count();
         $departmentCount = Department::count();
-        return view('admin.index')->withDepartmentCount($departmentCount)->withHospitalCount($hospitalCount)->withCityCount($cityCount)->withBedCount($bedCount);
+        $doctorsCount = Doctor::count();
+        return view('admin.index')->withDoctorsCount($doctorsCount)->withDepartmentCount($departmentCount)->withHospitalCount($hospitalCount)->withCityCount($cityCount)->withBedCount($bedCount);
     }
     public function addhospital()
     {
@@ -83,5 +85,30 @@ class HomeController extends Controller
         //dd($validatedData);
         $department = Department::create($validatedData);
         return redirect('/admin/home')->with('message', 'Department Added Successfully');
+    }
+    public function adddoctor()
+    {
+        $hospitals = Hospital::all();
+        return view('admin.adddoctor')->withHospitals($hospitals);
+    }
+    public function postdoctor(Request $request)
+    {
+        $validatedData = $request->validate([
+            'hospital_id'=> 'required|not_in:-1',
+            'name' => 'required',
+            'qualification' => 'required',
+            'specialization' => 'required',
+            'phone' => 'required',
+            'opd_day' => 'required|not_in:-1',
+            'opd_time' => 'required'
+        ]);
+        // dd($validatedData);
+        $doctor = Doctor::create($validatedData);
+        return redirect('/admin/home')->with('message', 'Doctor Added Successfully');
+    }
+    public function viewdoctors()
+    {
+        $hospitals = Hospital::all();
+        return view('admin.viewdoctors')->withHospitals($hospitals);
     }
 }

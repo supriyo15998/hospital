@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>SGSC-Admin | Add Material</title>
+  <title>Hospital-Admin | Add Hospital</title>
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   @include('adminLayouts.css')
 </head>
@@ -19,12 +19,12 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Add New Category
+        Add New Hospital
         <small>Preview</small>
       </h1>
       <ol class="breadcrumb">
         <li><a href="{{ route('home') }}"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="active">Add New Cateogry</li>
+        <li class="active">Add New Hospital</li>
       </ol>
     </section>
 
@@ -36,7 +36,7 @@
           <!-- general form elements -->
           <div class="box box-primary" style="padding: 4%">
             <div class="box-header with-border" style="text-align: center; font-weight: bold;">
-              <h3 class="box-title">Add New Category</h3>
+              <h3 class="box-title">Add New Hospital</h3>
             </div>
             @if($errors->any())
               <div class="alert alert-danger">

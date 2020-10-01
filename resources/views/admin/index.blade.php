@@ -98,20 +98,20 @@
           </div>
         </div>
         <!-- ./col -->
-        <!-- <div class="col-lg-3 col-xs-6">
+        <div class="col-lg-3 col-xs-6">
          
           <div class="small-box bg-blue">
             <div class="inner">
-              <h3>43</h3>
+              <h3>{{ $doctorsCount }}</h3>
 
-              <p>Total Testimonials</p>
+              <p>Total Doctors</p>
             </div>
             <div class="icon">
               <i class="ion ion-pie-graph"></i>
             </div>
             <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
           </div>
-        </div> -->
+        </div>
       </div>
     </section>
   </div>
