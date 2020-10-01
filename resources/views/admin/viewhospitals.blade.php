@@ -46,6 +46,9 @@
                   <th>Hospital City</th>
                   <th>Departments</th>
                   <th>Bed Details</th>
+                  <th>Laboratories</th>
+                  <th>Emergency Services</th>
+                  <th>HelpDesk Contacts</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -67,6 +70,33 @@
                             @foreach(Auth::user()->beds as $bed)
                                 <tr>
                                     <td>Type => {{ $bed->bed_type }} | Occupied => {{ $bed->capacity }} | Total => {{ $bed->total_capacity }}</td>
+                                </tr>
+                            @endforeach
+                      </table>
+                    </td>
+                    <td>
+                      <table class="table table-bordered table-hover">
+                            @foreach(Auth::user()->laboratories as $laboratory)
+                                <tr>
+                                    <td>{{ $laboratory->name }}</td>
+                                </tr>
+                            @endforeach
+                      </table>
+                    </td>
+                    <td>
+                      <table class="table table-bordered table-hover">
+                            @foreach(Auth::user()->emergencies as $emergency)
+                                <tr>
+                                    <td>{{ $emergency->name }}</td>
+                                </tr>
+                            @endforeach
+                      </table>
+                    </td>
+                    <td>
+                      <table class="table table-bordered table-hover">
+                            @foreach(Auth::user()->helpdesk as $helpdesk)
+                                <tr>
+                                    <td>{{ $helpdesk->name }} | {{ $helpdesk->phone }}</td>
                                 </tr>
                             @endforeach
                       </table>

@@ -8,6 +8,9 @@ use App\Hospital;
 use App\Department;
 use App\Bed;
 use App\Doctor;
+use App\Emergency;
+use App\Laboratory;
+use App\HelpDesk;
 use Auth;
 class HomeController extends Controller
 {
@@ -28,11 +31,13 @@ class HomeController extends Controller
      */
     public function index()
     {
-        
         $bedCount = Auth::user()->beds->count();
         $departmentCount = Auth::user()->departments->count();
         $doctorsCount = Auth::user()->doctors->count();
-        return view('admin.index')->withDoctorsCount($doctorsCount)->withDepartmentCount($departmentCount)->withBedCount($bedCount);
+        $labCount = Auth::user()->laboratories->count();
+        $emergencyCount = Auth::user()->emergencies->count();
+        $helpCount = Auth::user()->helpdesk->count();
+        return view('admin.index')->withHelpCount($helpCount)->withEmergencyCount($emergencyCount)->withLabCount($labCount)->withDoctorsCount($doctorsCount)->withDepartmentCount($departmentCount)->withBedCount($bedCount);
     }
     public function addhospital()
     {
@@ -57,7 +62,6 @@ class HomeController extends Controller
     }
     public function addbeds()
     {
-        
         return view('admin.addbeds');
     }
     public function postbeds(Request $request)
@@ -111,5 +115,48 @@ class HomeController extends Controller
     public function viewdoctors()
     {
         return view('admin.viewdoctors');
+    }
+    public function addemergency()
+    {
+        return view('admin.addemergency');
+    }
+    public function postemergency(Request $request)
+    {
+        $validatedData = $request->validate([
+            'name' => 'required'
+        ]);
+        $validatedData['user_id'] = Auth::user()->id;
+        //dd($validatedData);
+        $emergency = Emergency::create($validatedData);
+        return redirect('/admin/home')->with('message', 'Emergency service Added Successfully');
+    }
+    public function addlab()
+    {
+        return view('admin.addlab');
+    }
+    public function postlab(Request $request)
+    {
+        $validatedData = $request->validate([
+            'name' => 'required'
+        ]);
+        $validatedData['user_id'] = Auth::user()->id;
+        //dd($validatedData);
+        $laboratory = Laboratory::create($validatedData);
+        return redirect('/admin/home')->with('message', 'Laboratory Added Successfully');
+    }
+    public function addhelp()
+    {
+        return view('admin.addhelp');
+    }
+    public function posthelp(Request $request)
+    {
+        $validatedData = $request->validate([
+            'name' => 'required',
+            'phone' => 'required'
+        ]);
+        $validatedData['user_id'] = Auth::user()->id;
+        //dd($validatedData);
+        $HelpDesk = HelpDesk::create($validatedData);
+        return redirect('/admin/home')->with('message', 'HelpDesk Added Successfully');
     }
 }

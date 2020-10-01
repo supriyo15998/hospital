@@ -29,5 +29,12 @@ Route::prefix('admin')->group(function () {
     Route::get('/add-doctor', 'HomeController@adddoctor')->name('adddoctor');
     Route::post('/add-doctor', 'HomeController@postdoctor')->name('postdoctor');
     Route::get('/view-doctors', 'HomeController@viewdoctors')->name('viewdoctors');
+    Route::get('/add-lab', 'HomeController@addlab')->name('addlab');
+    Route::get('/add-emergency', 'HomeController@addemergency')->name('addemergency');
+    Route::post('/add-emergency', 'HomeController@postemergency')->name('postemergency');
+    Route::get('/add-lab', 'HomeController@addlab')->name('addlab');
+    Route::post('/add-lab', 'HomeController@postlab')->name('postlab');
+    Route::get('/add-help', 'HomeController@addhelp')->name('addhelp');
+    Route::post('/add-help', 'HomeController@posthelp')->name('posthelp');
 });
 

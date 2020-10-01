@@ -52,4 +52,16 @@ class User extends Authenticatable
     {
         return $this->hasMany(Doctor::class);
     }
+    public function laboratories()
+    {
+        return $this->hasMany(Laboratory::class);
+    }
+    public function emergencies()
+    {
+        return $this->hasMany(Emergency::class);
+    }
+    public function helpdesk()
+    {
+        return $this->hasMany(HelpDesk::class);
+    }
 }

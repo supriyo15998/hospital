@@ -77,19 +77,20 @@
             <li><a href="{{ route('viewdoctors') }}"><i class="fa fa-circle-o"></i> View All Doctors</a></li>
           </ul>
         </li>
-        <!-- <li class="treeview">
+        <li class="treeview">
           <a href="#">
             <i class="fa fa-laptop"></i>
-            <span>Manage Testimonials</span>
+            <span>Manage Others</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="#"><i class="fa fa-circle-o"></i> Add New Testimonial</a></li>
-            <li><a href="#"><i class="fa fa-circle-o"></i> View All Testimonials</a></li>
+            <li><a href="{{ route('addlab') }}"><i class="fa fa-circle-o"></i> Add New Laboratory</a></li>
+            <li><a href="{{ route('addemergency') }}"><i class="fa fa-circle-o"></i> Add New Emergency Service</a></li>
+            <li><a href="{{ route('addhelp') }}"><i class="fa fa-circle-o"></i> Add New HelpDesk</a></li>
           </ul>
-        </li> -->
+        </li>
         <!-- <li class="treeview">
           <a href="#">
             <i class="fa fa-table"></i> <span>Tables</span>
