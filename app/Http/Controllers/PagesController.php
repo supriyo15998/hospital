@@ -7,9 +7,14 @@ use App\City;
 use App\User;
 class PagesController extends Controller
 {
-    public function city(Request $request, $id)
+    public function city(Request $request)
     {
-        $city = City::findOrFail($id);
+        $request->validate([
+            'city' => 'required|not_in:-1'
+        ]);
+
+        $city = City::findOrFail($request->city);
+        //dd($city);
         return view('city')->withCity($city);
     }
     public function beds(Request $request, $id)

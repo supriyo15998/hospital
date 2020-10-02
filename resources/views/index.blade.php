@@ -9,17 +9,25 @@
 <body>
     <div class="container">
         <h3 style="text-align:center">Select City</h3>
-        <div class="row">
-            @foreach($cities as $city)
-                <div class="col-md-3">
-                    <div class="card" style="width: 18rem;">
-                        <div class="card-body">
-                            <a href="{{ route('city',$city->id) }}" class="btn btn-primary">{{ $city->name }}</a>
-                        </div>
-                    </div>
-                </div>
-            @endforeach
-        </div>
+        <form action="{{ route('city') }}" method="POST">
+            @csrf
+            <div class="form-group">
+            <!-- <label for="exampleFormControlSelect1">Example select</label> -->
+                <select class="form-control" id="exampleFormControlSelect1" name="city">
+                    <option value="-1">--Select City--</option>
+                    @foreach($cities as $city)
+                        <option value="{{ $city->id }}">{{ $city->name }}</option>
+                    @endforeach
+                </select>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </form>
+        
     </div>
     
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
