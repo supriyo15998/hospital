@@ -17,7 +17,9 @@ Route::get('/', function () {
     $cities = \App\City::all();
     return view('index')->withCities($cities);
 });
-
+Route::get('/maps', function () {
+	return view('maps');
+});
 Route::post('/city','PagesController@city')->name('city');
 Route::get('/{user}/beds','PagesController@beds')->name('beds');
 Route::get('/{user}/emergency','PagesController@emergency')->name('emergency');
